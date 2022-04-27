@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.15" />
+    <PackageReference Include="Telerik.DataSource.Trial" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>

@@ -11,6 +11,7 @@ using System.Linq;
 using SWARM.Server.Data;
 using SWARM.Server.Models;
 using SWARM.EF.Data;
+using System.Text.Json.Serialization;
 
 namespace SWARM.Server
 {
@@ -48,6 +49,8 @@ namespace SWARM.Server
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -82,6 +85,8 @@ namespace SWARM.Server
                 endpoints.MapControllers();
                 endpoints.MapFallbackToFile("index.html");
             });
+
+
         }
     }
 }
