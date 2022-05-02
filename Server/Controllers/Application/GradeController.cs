@@ -51,7 +51,7 @@ namespace SWARM.Server.Controllers.Application
         }
 
         [HttpDelete]
-        [Route("Get/{section}/{student}/{school}/{code}/{occurrence}")]
+        [Route("Delete/{section}/{student}/{school}/{code}/{occurrence}")]
         public async Task<IActionResult> RealDelete(int section, int student, int school, string code, int occurrence)
         {
             Grade itmGrade = await _context.Grades.Where(x => x.SectionId == section && x.StudentId == student && x.SchoolId == school && x.GradeCodeOccurrence == occurrence && x.GradeTypeCode == code).FirstOrDefaultAsync();
